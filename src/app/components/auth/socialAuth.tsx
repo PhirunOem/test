@@ -1,7 +1,7 @@
 "use client";
 
 // library imports
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -60,7 +60,7 @@ export default function SocialAuth() {
     };
 
     return (
-        <>
+        <Suspense>
             <div>
                 {authSuccess ? (
                     <div>
@@ -82,6 +82,6 @@ export default function SocialAuth() {
                     </div>
                 )}
             </div>
-        </>
+        </Suspense>
     );
 }
